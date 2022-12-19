@@ -1,16 +1,22 @@
 import React from 'react'
 
-export default function ToDo({todo}) {
+export default function ToDo({todo, deleteToDo}) {
+    
+    const handleDeleteTodo = () => {
+        deleteToDo(todo)
+    }
+    
   return (
     <div>
         <div>
-            <label>Task:</label>
-            <h3>{todo.task}</h3>
+            <div>Task:</div>
+            {todo.task}
         </div>
         <div style={{margin: "20px"}}>
             <div>Due Date:</div>
             {todo.due_date}
         </div>
+        <button onClick={handleDeleteTodo}>Clear</button>
     </div>
   )
 }

@@ -6,7 +6,7 @@ import ToDoForm from './ToDo\'s/ToDoForm';
 
 function App() {
 
-  const toDosList = 'http://127.0.0.1:3000/todos'
+  const toDosList = `http://127.0.0.1:3000/todos`
 
   const [toDoList, setToDoList] = useState([])
 
@@ -20,15 +20,27 @@ function App() {
   useEffect(() => {
     fetchToDoData()
   },[])
-
-  
-
     
+  // const handleDeleteTodo = (todoId) => {
+  //   fetch(`http://127.0.0.1:3000/todos/${todoId}`, {
+  //       method: "DELETE"
+  //   }).then(() => {
+  //     console.log("delete button pressed")
+  //   })
+  // }
+  
+  // const handleDeleteTodo = async (todoId) => {
+  //   const resp = await fetch(`http://127.0.0.1:3000/todos/${todoId}`, {
+  //     method: 'Delete'
+  //   })
+  //   setToDoList(todos.filter(todo => todo.id !== todoId))
+  // }
+
   return (
     <div className="App">
       <h1>To Do List</h1>
       <ToDoForm />
-      <ToDoList toDoList={toDoList}/>
+      <ToDoList toDoList={toDoList} />
       
     </div>
   );
