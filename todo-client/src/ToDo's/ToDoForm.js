@@ -1,36 +1,20 @@
 import React, {useState} from 'react'
 
-export default function ToDoForm() {
+export default function ToDoForm({fetchToDoData}) {
 
     const [task, setTask] = useState("")
-    const [due_date, set_due_date] = useState("")
-
- 
-    // const handleSubmit = e => {
-    //     e.preventDefault()
-    //     const newTask = {task, dueDate}
-
-    //     fetch(`http://127.0.0.1:3000/todos`, {
-    //         method: 'POST',
-    //         headers: {"Content-type": "application/json"},
-    //         body: JSON.stringify(newTask)
-    //     }).then(() => {
-    //         console.log("new task added")
-    //     })
-    // }    
+    const [dueDate, setDueDate] = useState("")   
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const newTask = {task, due_date}
-        const res = await fetch (`http://127.0.0.1:3000/todos`, {
+        await fetch(`http://127.0.0.1:3000/todos`, {
             method: 'POST',
             headers: {"Content-type": "application/json"},
-            body: JSON.stringify(newTask)
+            body: JSON.stringify({task: task, due_date: dueDate})
         })
-        const data = await res.json(newTask)
+        fetchToDoData()
         setTask("")
-        set_due_date("")
-        
+        setDueDate("")
     }
 
   return (
@@ -45,9 +29,9 @@ export default function ToDoForm() {
             <br/>
             <input 
                 placeholder='Enter due date...'
-                value={due_date}
-                onChange={(e) => set_due_date(e.target.value)}
-                name="due_date"
+                value={dueDate}
+                onChange={(e) => setDueDate(e.target.value)}
+                name="dueDate"
             />
             <br/>
             <button>Add Task</button>

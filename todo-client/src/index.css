@@ -1,3 +1,25 @@
 .App {
   text-align: center;
+  margin: 20px;
+}
+
+.todo-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 30px;
+
+}
+
+.buttons-container {
+  width: 50px;
+  height: 25px;
+  display: flex;
+}
+
+.todo-task-container {
+  display: flex;
+}
+
+.due-date-containter {
+  display: flex;
 }

@@ -1,22 +1,35 @@
 import React from 'react'
 
-export default function ToDo({todo, deleteToDo}) {
+export default function ToDo({todo, deleteToDo, onEditClick, fetchToDoData}) {
     
     const handleDeleteTodo = () => {
         deleteToDo(todo)
+        fetchToDoData()
     }
+
+    
+
     
   return (
-    <div>
-        <div>
-            <div>Task:</div>
+    <div className='todo-container'>
+        <div className='todo-task-container'>
+            <label>Task: </label>
+            &nbsp;
             {todo.task}
         </div>
-        <div style={{margin: "20px"}}>
-            <div>Due Date:</div>
-            {todo.due_date}
+        
+        <div className='due-date-containter' >
+            <label>Due Date: </label>
+            &nbsp;
+            <div>{todo.due_date}</div>
         </div>
-        <button onClick={handleDeleteTodo}>Clear</button>
+        <div className='buttons-container'>
+            <button className='clear-button' onClick={handleDeleteTodo}>Clear</button>
+            &nbsp;
+            <button className='update-button' onClick={() => onEditClick(todo)}>Update</button>
+        </div>
+        
+        
     </div>
   )
 }
