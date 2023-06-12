@@ -1,0 +1,2 @@
+.App{display:grid;margin:20px;text-align:center}.todo-container{display:grid;grid-auto-rows:40px,40px;grid-template-columns:repeat(5,1fr);height:100%;width:100%}.buttons-container{grid-gap:1px;display:grid;grid-auto-rows:auto;grid-template-columns:repeat(2,60px);height:25px;justify-content:center;width:50px}
+/*# sourceMappingURL=main.434c85cf.css.map*/

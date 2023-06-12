@@ -17,6 +17,8 @@ export default function ToDoForm({fetchToDoData}) {
         setDueDate("")
     }
 
+    const disableAddTaskButton = task.length < 1 || dueDate.length < 1
+
   return (
     <div>
         <form onSubmit={handleSubmit}>
@@ -34,7 +36,7 @@ export default function ToDoForm({fetchToDoData}) {
                 name="dueDate"
             />
             <br/>
-            <button>Add Task</button>
+            <button disabled={disableAddTaskButton}>Add Task</button>
         </form>
     </div>
   )

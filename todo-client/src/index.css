@@ -1,25 +1,70 @@
 .App {
   text-align: center;
   margin: 20px;
+  display: grid;
+  
 }
 
 .todo-container {
-  display: flex;
+
+  /* for flex */
+
+  /* display: flex;
   justify-content: space-around;
-  margin: 30px;
+  margin: 30px; */
+
+  /* for grid */
+  
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: 40px, 40px;
+  height: 100%;
+  width: 100%;
+  /* border: 1px solid; */
+}
+
+.todo-task-container {
+  /* display: flex; */
+  /* box-sizing: border-box;
+  border: 1px solid white; */
+  
+}
+
+
+
+.due-date-containter {
+  /* display: flex; */
 
 }
 
 .buttons-container {
+
+  /* for flex */
+
+  /* width: 50px;
+  height: 25px;
+  display: flex; */
+
+  /* for grid  */
+
+  display: grid;
+  grid-template-columns: repeat(2, 60px);
+  grid-auto-rows: auto;
+  justify-content: center;
+  grid-gap: 1px;
   width: 50px;
   height: 25px;
-  display: flex;
+  
 }
 
-.todo-task-container {
-  display: flex;
+/* .App {
+  display: grid;
+  grid-template-columns: 280px 250px;
+  grid-template-areas: "header header";
 }
 
-.due-date-containter {
-  display: flex;
-}
+.header-container {
+  grid-area: header;
+} */
+
+
